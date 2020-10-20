@@ -1,0 +1,141 @@
+<app-header></app-header>
+<div class="container">
+  <div class="row m-auto">
+    <div class="col-md-12"><div class="card card1">
+
+<div class="row">
+  <div class="col-md-6">
+    <div class="row">
+  <div class="col-md-6 text-center m-0 pt-2 pb-2">
+    <img  class="symbolImage" src="assets/images.jfif" alt="" width="150" height="120">
+  </div>
+  <div class="col-md-6 wileyText">
+   WileyNXT
+  </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12 IIT pl-5">IIT Roorkee - Wiley</div>
+  </div>
+  <div class="row">
+    <div class="col-md-12 pg ml-5">PG Certification in AI for Digital Businesses and E-commerce.</div>
+  </div>
+</div>
+<div class="col-md-6">
+  <img  class="roor" src="assets/3131_IIT_Roorkee.jpg" alt="" width="524" height="500">
+</div>
+</div>
+      <div class="container1" style=" transform: scaleX(-1) rotateX(180deg) rotateY(180deg);">
+        <svg viewBox="0 0 500 500" preserveAspectRatio="xMinYMin meet">
+          <path d="M0,87 C154,164 293,0 520,140 L515,00 L0,0 Z" style="stroke: none; fill:mediumpurple;"></path>
+        </svg>
+        <div class="textClass ml-3">
+          <div>
+          <span style="color: white;font-size: xx-large;">Indian Institute of Technology-Roorkee</span> <span style="color: cyan;font-size: xx-large;">   in collaboration</span>
+        </div>
+        <div class="pb-1"><span style="color: cyan;font-size: xx-large;">with    </span>  <span style="color: white;font-size: xx-large;">WileyNXT</span> <span style="color: cyan;font-size: xx-large;">, an innovative learning solution,</span></div>
+        
+        <div class="pb-0">
+          <span style="color: cyan;font-size: large;">has lanuched the</span>   <span style="color: white;font-size: large;"> Post Graduate Certification in </span>
+        </div>
+        
+        <div class="pb-4" style="color: white;font-size: large;">AI for Digital Businesses and E-commerce.</div>
+      </div>
+      <img class="imageStyle" src="assets/comingsoon.jpg" alt="" width="200" height="100">
+      </div>
+      
+      
+    </div></div>
+    
+  </div>
+  <div class="row m-auto mt-5">
+    <div class="col-md-12 mt-5">
+    <div  class="card" style="background: #0033CC;">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="fillUp">
+          <span style="font-size: 23px;">
+            AI in Digital Businesses and E-commerce
+          </span>
+          <br/>
+          <span style="font-size: 20px;">
+           Excited about this program as much as we are?
+          </span>
+          <br/>
+          <span>
+            Fill up this form and download your copy of free brochure.
+          </span>
+        </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card p-4 m-3">
+            <div [formGroup]="registerForm">
+            <div class="row">
+              <div class="col-md-6">
+                <input id="name" name="name" class="form-control"
+                formControlName="name"
+      [(ngModel)]="name"  placeholder="Full Name">
+      
+              </div>
+              <div class="col-md-6">
+                <input type="email" formControlName="email" class="form-control" name="email" [(ngModel)]="email" placeholder="Email">
+              </div>
+            </div>
+            <div class="row mt-3">
+              <div class="col-md-6">
+                <ngx-intl-tel-input style="width: 100%;" [cssClass]="'custom'"
+                [preferredCountries]="preferredCountries"
+                [enableAutoCountrySelect]="true"
+                [enablePlaceholder]="true"
+                [searchCountryFlag]="true"
+                [searchCountryField]="[SearchCountryField.Iso2, SearchCountryField.Name]"
+                [selectFirstCountry]="false"
+                [selectedCountryISO]="CountryISO.India"
+                [maxLength]="15"
+                [tooltipField]="TooltipLabel.Name"
+                [phoneValidation]="true"
+                [separateDialCode]="separateDialCode"
+                name="phone"
+                formControlName="phone"
+                
+                [(ngModel)]="phone">
+              </ngx-intl-tel-input></div>
+              <div class="col-md-6">
+                <input type="text" formControlName="location" class="form-control" name="location" [(ngModel)]="location" placeholder="Location">
+              </div>
+            </div>
+            <div class="text-center">
+              <button class="btn btn-primary mr-1" (click)="save()">Submit</button>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="ml-3 mt-4" *ngIf="formDetails!=0">
+  <span style="font-size: x-large;">Form Details</span>
+  <table  class="table">
+  <thead>
+    <tr >
+      <th scope="col">Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Phone</th>
+      <th scope="col">Location</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of formDetails">
+   
+      <td>{{item.name}}</td>
+      <td>{{item.email}}</td>
+      <td>{{item.phone}}</td>
+      <td>{{item.location}}</td>
+    </tr>
+   
+  </tbody>
+</table>
+</div>
+
+</div>
